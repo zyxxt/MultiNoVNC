@@ -4,10 +4,11 @@
 "use strict";
 var http = require('http');
 var route = require('./server/web/route/route.js');
+var config = require('./config.json');
 
 http.createServer(function (req, res) {
 	var r = route.getRoute(req, res);
 	r.run();
 
-}).listen(8099, '200.200.100.128');
+}).listen(config.port, config.host);
 

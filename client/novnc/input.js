@@ -263,6 +263,7 @@ function onMouseButton(e, down) {
         Util.Debug("onMouseButton " + (down ? "down" : "up") +
                    ", x: " + pos.x + ", y: " + pos.y + ", bmask: " + bmask);
         conf.onMouseButton(pos.x, pos.y, down, bmask);
+        onIFrameMouseButton(pos.x, pos.y, down, bmask);
     }
     //Util.stopEvent(e);
     //return false;
@@ -305,6 +306,10 @@ function onMouseWheel(e) {
     if (conf.onMouseButton) {
         conf.onMouseButton(pos.x, pos.y, 1, bmask);
         conf.onMouseButton(pos.x, pos.y, 0, bmask);
+
+
+        onIFrameMouseButton(pos.x, pos.y, 1, bmask);
+        onIFrameMouseButton(pos.x, pos.y, 0, bmask);
     }
     Util.stopEvent(e);
     return false;
@@ -325,6 +330,8 @@ function onMouseMove(e) {
 //    Util.Warn('mouse ' + evt.which + '/' + evt.button + ' up:' + pos.x + "," + pos.y);
     if (conf.onMouseMove) {
         conf.onMouseMove(pos.x, pos.y);
+
+        onIFrameMouseMove(pos.x, pos.y);
     }
     Util.stopEvent(e);
     return false;

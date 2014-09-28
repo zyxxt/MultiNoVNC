@@ -1,149 +1,149 @@
 #toolbar .btn {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 #win ul {
-	list-style: none
+    list-style: none
 }
 #win li label {
-	line-height: 30px;
+    line-height: 30px;
 }
 #win li input {
-	position: absolute;
-	right: 60px;
+    position: absolute;
+    right: 60px;
 }
 
 
 .win-mask {
-	background-color: #000;
-	filter: alpha(opacity=20);
-	-moz-opacity: 0.20;
-	-khtml-opacity: 0.20;
-	opacity: 0.20;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	z-index: 1000;
+    background-color: #000;
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.20;
+    -khtml-opacity: 0.20;
+    opacity: 0.20;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
 }
 .win {
-	width: 400px;
-	height: 300px;
-	background-color: #FFF;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -200px;
-	margin-top: -150px;
-	z-index: 1100;
-	border: 1px solid rgb(34,160,179);
+    width: 400px;
+    height: 300px;
+    background-color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    z-index: 1100;
+    border: 1px solid rgb(34,160,179);
 }
 .win-title {
-	background-color: rgb(34,160,179);
-	height: 34px;
-	line-height: 34px;
-	color: #000;
-	font-size: 16px;
-	font-weight: bold;
-	text-indent: 10px;
-	color: #FFF;
-	border-bottom: 1px solid rgb(34,160,179);
-	-webkit-box-shadow: 0px -1px 3px rgb(34,160,179) inset;
-	-moz-box-shadow: 0px -1px 3px rgb(34,160,179) inset;
+    background-color: rgb(34,160,179);
+    height: 34px;
+    line-height: 34px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    text-indent: 10px;
+    color: #FFF;
+    border-bottom: 1px solid rgb(34,160,179);
+    -webkit-box-shadow: 0px -1px 3px rgb(34,160,179) inset;
+    -moz-box-shadow: 0px -1px 3px rgb(34,160,179) inset;
 }
 .win-title span {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
 }
 .win-title .win-close {
-	float: right;
-	height: 16px;
-	width: 16px;
-	cursor: pointer;
-	margin: 8px;
-	background-image: url('image/delete.gif');
-	background-repeat: no-repeat;
+    float: right;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    margin: 8px;
+    background-image: url('image/delete.gif');
+    background-repeat: no-repeat;
 }
 .win-body {
-	padding: 0 20px
+    padding: 0 20px
 }
 .win-footer {
-	position: absolute;
-	bottom: 0px;
-	background-color: #F5F5F5;
-	border-top: 1px solid #E0E0E0;
-	padding: 6px 0;
-	width: 100%;
-	text-align: center;
-	clear: both;
+    position: absolute;
+    bottom: 0px;
+    background-color: #F5F5F5;
+    border-top: 1px solid #E0E0E0;
+    padding: 6px 0;
+    width: 100%;
+    text-align: center;
+    clear: both;
 }
 .win-footer .btn {
-	margin-right: 8px;
-	background-color: #ECECEC;
-	border: 1px solid #BABDC5;
-	color: #222;
-	display: inline-block;
-	padding: 3px 23px;
-	background: -moz-linear-gradient(top, #EDEDF1, #E2E4E7);
-	background: -ms-linear-gradient(top, #EDEDF1, #E2E4E7);
-	background: -o-linear-gradient(top, #EDEDF1, #E2E4E7);
-	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDF1), to(#E2E4E7));
-	background: -webkit-linear-gradient(top, #EDEDF1, #E2E4E7);
-	background: linear-gradient(top, #EDEDF1, #E2E4E7);
+    margin-right: 8px;
+    background-color: #ECECEC;
+    border: 1px solid #BABDC5;
+    color: #222;
+    display: inline-block;
+    padding: 3px 23px;
+    background: -moz-linear-gradient(top, #EDEDF1, #E2E4E7);
+    background: -ms-linear-gradient(top, #EDEDF1, #E2E4E7);
+    background: -o-linear-gradient(top, #EDEDF1, #E2E4E7);
+    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDF1), to(#E2E4E7));
+    background: -webkit-linear-gradient(top, #EDEDF1, #E2E4E7);
+    background: linear-gradient(top, #EDEDF1, #E2E4E7);
 }
 .win-footer a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #all {
-	list-style-type: none;
-	padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 .iframe-item {
-	float: left;
-	width: 642px;
-	height: 514px;
-	position: relative;
-	margin: 0 10px 10px 0;
+    float: left;
+    width: 642px;
+    height: 514px;
+    position: relative;
+    margin: 0 10px 10px 0;
 }
 
 .iframe-item .iframe-title {
-	height: 18px;
-	padding: 5px;
+    height: 18px;
+    padding: 5px;
 
-	border: solid #999 1px;
+    border: solid #999 1px;
 }
 .iframe-item .iframe-title .iframe-button {
-	float: right;
-	height: 16px;
-	width: 16px;
-	cursor: pointer;
+    float: right;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
 }
 .iframe-item .iframe-title .iframe-close {
-	background-image: url('image/delete.gif');
-	background-repeat: no-repeat;
+    background-image: url('image/delete.gif');
+    background-repeat: no-repeat;
 }
 .iframe-item .iframe-title span {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
 }
 .iframe-item .iframe-body {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 30px;
 
-	border: solid #999 1px;
-	border-top: none;
+    border: solid #999 1px;
+    border-top: none;
 }
 
 .iframe-item iframe {
-	height: 100%;
-	width: 100%;
-	border: none;
+    height: 100%;
+    width: 100%;
+    border: none;
 }

@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-	<link href="main.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript" src="lib/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="main.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 <div style="display: none;" class="win-mask" id="win_mask"></div>
 <div style="display: none;" class="win" id="win">
-	<div class="win-title">
-		<div class="win-close"></div>
-		<span>消息</span>
-	</div>
-	<div class="win-body">
-		<ul>
-			<li>
-				<label for="name" >标题：</label>
-				<input id="name" name="name" >
-			</li>
-			<li>
-				<label for="host" >VNC主机IP：</label>
-				<input id="host" name="host" >
-			</li>
-			<li>
-				<label for="port" >VNC端口：</label>
-				<input id="port" name="port" >
-			</li>
-			<li>
-				<label for="password" >VNC密码：</label>
-				<input id="password" name="password" >
-			</li>
-		</ul>
-	</div>
-	<div class="win-footer">
-		<a href="#" id="submit" class="btn">确定</a>
-	</div>
+    <div class="win-title">
+        <div class="win-close"></div>
+        <span>消息</span>
+    </div>
+    <div class="win-body">
+        <ul>
+            <li>
+                <label for="name" >标题：</label>
+                <input id="name" name="name" >
+            </li>
+            <li>
+                <label for="host" >VNC主机IP：</label>
+                <input id="host" name="host" >
+            </li>
+            <li>
+                <label for="port" >VNC端口：</label>
+                <input id="port" name="port" >
+            </li>
+            <li>
+                <label for="password" >VNC密码：</label>
+                <input id="password" name="password" >
+            </li>
+        </ul>
+    </div>
+    <div class="win-footer">
+        <a href="#" id="submit" class="btn">确定</a>
+    </div>
 </div>
 <div id="toolbar">
-	<input class="btn" id="add" type="button" value="添加" />
+    <input class="btn" id="add" type="button" value="添加" />
+    <input class="btn" id="printScreen" type="button" value="截图" />
 </div>
 <ul id="all">
-	<!-- iframe 放在这里 -->
+    <!-- iframe 放在这里 -->
 </ul>
 </body>
 </html>

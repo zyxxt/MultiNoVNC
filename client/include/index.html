@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<title>nvc</title>
-	<style>
-		html, body {margin: 0;padding: 0;}
-	</style>
-	<script type="text/javascript" src="../lib/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="../novnc/util.js"></script>
-	<script type="text/javascript" src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>nvc</title>
+    <style>
+        html, body {margin: 0;padding: 0;}
+    </style>
+    <script type="text/javascript" src="../lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="../novnc/util.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 <div id="nvc">
-	<canvas id="no_vnc"></canvas>
+    <canvas id="no_vnc"></canvas>
 </div>
 <script type="text/javascript">
-	INCLUDE_URI = '../novnc/';
+    INCLUDE_URI = '../novnc/';
 
-	Util.load_scripts([
-		"webutil.js",
-		"base64.js",
-		"websock.js",
-		"des.js",
-		"keysymdef.js",
-		"keyboard.js",
-		"input.js",
-		"display.js",
-		"jsunzip.js",
-		"rfb.js"
-	]);
+    Util.load_scripts([
+        "webutil.js",
+        "base64.js",
+        "websock.js",
+        "des.js",
+        "keysymdef.js",
+        "keyboard.js",
+        "input.js",
+        "display.js",
+        "jsunzip.js",
+        "rfb.js"
+    ]);
 </script>
 </body>
 </html>

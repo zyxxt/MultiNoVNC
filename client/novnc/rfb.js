@@ -1830,6 +1830,11 @@ that.get_WebSocket = function () {
 	return ws;
 };
 
+
+that.mouseButton = mouseButton;
+that.mouseMove = mouseMove;
+that.keyPress = keyPress;
+
 that.connect = function(host, port, password, user, path, param) {
     //Util.Debug(">> connect");
 
