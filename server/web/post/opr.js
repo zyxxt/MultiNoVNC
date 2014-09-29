@@ -19,7 +19,7 @@ module.exports = (function () {
             console.log('websockify 错误输出：' + data);
         });
         child.on('error', function () {
-            console.log('进程出错');
+            console.log('websockify 进程出错');
             console.log(arguments);
         });
         child.on('exit', function (code, signal) {
@@ -60,11 +60,33 @@ module.exports = (function () {
     };
 
 
+    var printScreen = function (host, port, passwd, filename) {
+        var spawn = require('child_process').spawn,
+            child  = spawn('vncdo', ['-s', host + '::' + port, '-p', passwd, 'capture', filename]);
+
+        child.stdout.on('data', function (data) {
+            console.log('vncdotool 标准输出：' + data);
+        });
+        child.stderr.on('data', function (data) {
+            console.log('vncdotool 错误输出：' + data);
+        });
+        child.on('error', function () {
+            console.log('vncdotool 进程出错');
+            console.log(arguments);
+        });
+        child.on('exit', function (code, signal) {
+            console.log('vncdotool 退出，code：%s, signal: %s', code, signal);
+        });
+    };
+
+
 
     return {
         getProcess: getProcess,
         createVNC: createVNC,
-        removeVNC: removeVNC
+        removeVNC: removeVNC,
+
+        printScreen: printScreen
     };
 
 } ());

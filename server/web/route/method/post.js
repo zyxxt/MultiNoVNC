@@ -54,7 +54,7 @@ Post.prototype.parseOpr = function (json, req, res) {
 Post.prototype.onAdd = function (json, req, res) {
     var opr = require('../../post/opr.js');
     var pid = opr.createVNC(json);
-    pidList[pid] = true;
+    pidList[pid] = json;
 
     res.end(JSON.stringify({
         success: true,
@@ -78,7 +78,24 @@ Post.prototype.onDelete = function (json, req, res) {
 };
 
 Post.prototype.onPrintScreen = function (json, rsq, res) {
-
+    var opr = require('../../post/opr.js'),
+        fileList = [],
+        file,
+        d;
+    for (var pid in pidList) {
+        if (pidList.hasOwnProperty(pid)) {
+            d = pidList[pid];
+            if (d) {
+                file = (+new Date()) + '.gif';
+                opr.printScreen(d.host, d.port, d.password, './dist/' + file);
+                fileList.push(file);
+            }
+        }
+    }
+    res.end(JSON.stringify({
+        success: true,
+        fileList: fileList
+    }));
 };
 
 

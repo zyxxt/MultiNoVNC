@@ -2,6 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/index.js" libraries="{Node.js Globals}" />
+    <file url="file://$PROJECT_DIR$/server/web/post/opr.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/web/route/method/get.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/web/route/method/post.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/web/route/route.js" libraries="{Node.js Globals}" />

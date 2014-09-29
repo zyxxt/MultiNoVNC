@@ -125,6 +125,16 @@
     background-image: url('image/delete.gif');
     background-repeat: no-repeat;
 }
+.iframe-item .iframe-title .iframe-min {
+    margin-right: 8px;
+}
+.iframe-item .iframe-title .iframe-min div {
+    height: 2px;
+    width: 12px;
+    background: red;
+    margin: 8px;
+}
+
 .iframe-item .iframe-title span {
     text-overflow: ellipsis;
     white-space: nowrap;

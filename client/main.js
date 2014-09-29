@@ -35,6 +35,7 @@ function getIFrameItemTitle (id, option) {
     return [
         '<div class="iframe-title">',
             '<div class="iframe-button iframe-close"></div>',
+            '<div class="iframe-button iframe-min"><div></div></div>',
             '<span>' + option.name + '</span>',
         '</div>'
     ].join('');
@@ -56,6 +57,7 @@ function getIFrameItemBody (id, option) {
 function add (id, option) {
     all.append(getIFrameItem.apply(this, arguments));
     $('.iframe-close', $('#' + id)).click(onRemove);
+    $('.iframe-min', $('#' + id)).click(onMin);
 }
 
 function remove (id) {
@@ -90,6 +92,24 @@ function onRemove () {
         }
     });
 
+}
+
+function onMin () {
+    var li = $(this).parents('.iframe-item');
+    var body = li.children('.iframe-body');
+    if (body.is(':visible')) {
+        body.hide();
+        $(this).children().css({
+            'height': '12px',
+            'margin-top': '3px'
+        });
+    } else {
+        body.show();
+        $(this).children().css({
+            'height': '2px',
+            'margin-top': '8px'
+        });
+    }
 }
 
 function onSubmit () {
@@ -157,10 +177,14 @@ function onPrintScreen () {
             opr:'printScreen'
         },
         success: function (json) {
+            var html = [];
             if (json.success) {
-
+                var list = json.fileList;
+                list.forEach(function (file) {
+                    html.push('<a target="_blank" href="../dist/' + file + '">' + file + '</a>')
+                });
             }
-
+            $('#screen').html(html.join(''));
         }
     });
 }
