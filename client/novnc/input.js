@@ -58,6 +58,9 @@ function onKeyDown(e) {
     if (! conf.focused) {
         return true;
     }
+
+    onIFrameKeyDown(k, e);
+
     if (k.keydown(e)) {
         // Suppress bubbling/default actions
         Util.stopEvent(e);
@@ -72,6 +75,9 @@ function onKeyPress(e) {
     if (! conf.focused) {
         return true;
     }
+
+    onIFrameKeyPress(k, e);
+
     if (k.keypress(e)) {
         // Suppress bubbling/default actions
         Util.stopEvent(e);
@@ -87,6 +93,9 @@ function onKeyUp(e) {
     if (! conf.focused) {
         return true;
     }
+
+    onIFrameKeyUp(k, e);
+
     if (k.keyup(e)) {
         // Suppress bubbling/default actions
         Util.stopEvent(e);

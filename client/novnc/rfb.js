@@ -28,7 +28,7 @@ var that           = {},  // Public API methods
     keyEvent, pointerEvent, clientCutText,
 
     getTightCLength, extract_data_uri,
-    keyPress, mouseButton, mouseMove,
+    keyPress, keyDown, keyUp, mouseButton, mouseMove,
 
     checkEvents,  // Overridable for testing
 
@@ -220,7 +220,9 @@ function constructor() {
         updateState('fatal', "No working Display");
     }
     keyboard = new Keyboard({'target': conf.focusContainer,
-                                'onKeyPress': keyPress});
+                                'onKeyPress': keyPress,
+                                'onKeyDown': keyDown,
+                                'onKeyUp': keyUp});
     mouse    = new Mouse({'target': conf.target,
                             'onMouseButton': mouseButton,
                             'onMouseMove': mouseMove,
@@ -580,6 +582,12 @@ keyPress = function(keysym, down) {
 
     Util.Warn("key enevnt:" + keysym + down);
     ws.send(keyEvent(keysym, down));
+};
+keyDown = function (k, e) {
+    k.keydown(e);
+};
+keyUp = function (k, e) {
+    k.keyup(e);
 };
 
 mouseButton = function(x, y, down, bmask) {
@@ -1834,6 +1842,8 @@ that.get_WebSocket = function () {
 that.mouseButton = mouseButton;
 that.mouseMove = mouseMove;
 that.keyPress = keyPress;
+that.keyUp = keyUp;
+that.keyDown = keyDown;
 
 that.connect = function(host, port, password, user, path, param) {
     //Util.Debug(">> connect");

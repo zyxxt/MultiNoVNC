@@ -214,3 +214,26 @@ function doMouseButton(id, x, y, type, mask) {
     });
 }
 
+
+function doKeyDown (id, k, e) {
+    $('.iframe-item:not(#' + id + ') iframe').each(function () {
+        if (this.contentWindow && this.contentWindow.doKeyDown) {
+            this.contentWindow.doKeyDown(k, e);
+        }
+    });
+}
+function doKeyUp (id, k, e) {
+    $('.iframe-item:not(#' + id + ') iframe').each(function () {
+        if (this.contentWindow && this.contentWindow.doKeyUp) {
+            this.contentWindow.doKeyUp(k, e);
+        }
+    });
+}
+function doKeyPress (id, k, e) {
+    $('.iframe-item:not(#' + id + ') iframe').each(function () {
+        if (this.contentWindow && this.contentWindow.doKeyPress) {
+            this.contentWindow.doKeyPress(k, e);
+        }
+    });
+}
+

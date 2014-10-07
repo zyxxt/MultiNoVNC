@@ -75,3 +75,24 @@ function doMouseMove (x, y) {
 function doMouseButton (x, y, type, mask) {
     rfb.mouseButton.apply(this, arguments);
 }
+
+
+function onIFrameKeyDown (k, e) {
+    parent.doKeyDown(id, k, e);
+}
+function doKeyDown (k, e) {
+    rfb.keyDown(k, e);
+}
+function onIFrameKeyUp (k, e) {
+    parent.doKeyUp(id, k, e);
+}
+function doKeyUp (k, e) {
+    rfb.keyUp(k, e);
+}
+function onIFrameKeyPress (k, e) {
+    parent.doKeyPress(id, k, e);
+}
+function doKeyPress (k, e) {
+    k.keypress(e);
+    rfb.keyPress(k, e);
+}
