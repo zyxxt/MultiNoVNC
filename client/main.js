@@ -191,11 +191,12 @@ function onPrintScreen () {
 
 
 function updateVncSize (id, size) {
-    var iframe = $('#' + id);
+    var iframe = $('#' + id + ' .iframe-body');
     iframe.css({
-        height: size.height + 34,
+        height: size.height + 4,
         width: size.width + 2
     });
+    $('#' + id).css('width', size.width + 4);
 }
 
 
@@ -233,6 +234,15 @@ function doKeyPress (id, k, e) {
     $('.iframe-item:not(#' + id + ') iframe').each(function () {
         if (this.contentWindow && this.contentWindow.doKeyPress) {
             this.contentWindow.doKeyPress(k, e);
+        }
+    });
+}
+
+
+function doNotFire (disable) {
+    $('.iframe-item iframe').each(function () {
+        if (this.contentWindow) {
+            this.contentWindow.donotfire = !!disable;
         }
     });
 }

@@ -103,8 +103,8 @@
 }
 .iframe-item {
     float: left;
-    width: 642px;
-    height: 514px;
+    /*width: 642px;*/
+    /*height: 514px;*/
     position: relative;
     margin: 0 10px 10px 0;
 }
@@ -142,11 +142,11 @@
     display: block;
 }
 .iframe-item .iframe-body {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 30px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*top: 30px;*/
 
     border: solid #999 1px;
     border-top: none;
@@ -156,4 +156,9 @@
     height: 100%;
     width: 100%;
     border: none;
+}
+
+
+#screen a {
+    margin-right: 10px;
 }

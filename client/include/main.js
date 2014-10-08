@@ -3,7 +3,8 @@
  */
 
 var rfb,
-    id;
+    id,
+    donotfire = false;
 window.onscriptsload = function () {
     loadVNC({
         host: window.location.hostname,
@@ -70,10 +71,10 @@ function onIFrameMouseButton (x, y, type, mask) {
 }
 
 function doMouseMove (x, y) {
-    rfb.mouseMove.apply(this, arguments);
+    rfb && rfb.mouseMove.apply(this, arguments);
 }
 function doMouseButton (x, y, type, mask) {
-    rfb.mouseButton.apply(this, arguments);
+    rfb && rfb.mouseButton.apply(this, arguments);
 }
 
 
@@ -81,18 +82,59 @@ function onIFrameKeyDown (k, e) {
     parent.doKeyDown(id, k, e);
 }
 function doKeyDown (k, e) {
-    rfb.keyDown(k, e);
+//    rfb && rfb.keyDown(k, createKeyEvent('keydown', e));
+    createKeyEvent('keydown', e)
 }
 function onIFrameKeyUp (k, e) {
     parent.doKeyUp(id, k, e);
 }
 function doKeyUp (k, e) {
-    rfb.keyUp(k, e);
+//    rfb && rfb.keyUp(k, createKeyEvent('keyup', e));
+    createKeyEvent('keyup', e)
 }
 function onIFrameKeyPress (k, e) {
     parent.doKeyPress(id, k, e);
 }
 function doKeyPress (k, e) {
-    k.keypress(e);
-    rfb.keyPress(k, e);
+    e = createKeyEvent('keypress', e);
+//    k.keypress(e);
+//    rfb && rfb.keyPress(k, e);
+}
+
+function createKeyEvent (type, e) {
+//    var event = document.createEvent("KeyboardEvent");
+//    event.initKeyboardEvent(
+//        type,
+//        e.bubbles,
+//        e.cancelable,
+//        e.view,
+//        e.ctrlKey,
+//        e.altKey,
+//        e.shiftKey,
+//        e.metaKey,
+//        e.keyCode,
+//        e.charCode
+//    );
+    if (donotfire) {
+        return;
+    }
+    var event = document.createEvent("Events");
+    event.initEvent(type, true, true);
+    event.bubbles = e.bubbles;
+    event.cancelable = e.cancelable;
+    event.view = window;
+    event.ctrlKey = e.ctrlKey;
+    event.altKey = e.altKey;
+    event.shiftKey = e.shiftKey;
+    event.metaKey = e.metaKey;
+    event.keyCode = e.keyCode;
+    event.charCode = e.charCode;
+    event.which = e.which;
+    event.currentTarget = document;
+    event.target = document.body;
+    event.srcElement = document.body;
+    parent.doNotFire(true);
+    document.dispatchEvent(event);
+    parent.doNotFire(false);
+    return event;
 }
